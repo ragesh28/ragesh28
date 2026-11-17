@@ -1,55 +1,40 @@
-<h1 align="center">Hi 👋, I'm Ragesh L</h1>
-<h3 align="center">Aspiring AI & Data Science Engineer | Passionate About Solving Real-World Problems with Data</h3>
+# Ragesh L
 
----
+<div align="center">
+  <img src="./assets/animation.svg" width="100%" alt="Pixel introduction and a replay of Ragesh’s public GitHub contribution days">
+</div>
 
-## 🔥 About Me
-- 🎓 AI & Data Science Student (Graduating 2026)
-- 🌱 Currently learning **Machine Learning, Deep Learning, Generative AI, LLMs, Prompt Engineering, AI Agents**
-- 👨‍💻 Solving challenges on **HackerRank** and exploring Ethical Hacking using **Kali Linux**
-- 🏆 Open to **Internship Opportunities** to apply and expand my skills
-- ✉️ Contact me at **lragesh28@gmail.com**
+I build AI and data tools that help people find information and automate repetitive work. My background is in **Artificial Intelligence and Data Science** at CK College of Engineering & Technology. At Cavin InfoTech, I worked on data exploration and AI workflows for weather and news applications.
 
----
+[Portfolio](https://ragesh-ai-portfolio.netlify.app/) · [LinkedIn](https://www.linkedin.com/in/ragesh-l-34118inf) · [LeetCode](https://leetcode.com/u/Iragesh28/)
 
-## 🚀 Skills & Tools
-<p align="left">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Mojo-E84D2A?style=for-the-badge&logo=mojo&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQL-025E8C?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=scikitlearn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Generative%20AI-000000?style=for-the-badge&logo=openai&logoColor=white" />
-  <img src="https://img.shields.io/badge/NLP-CC342D?style=for-the-badge&logo=spacy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" />
-  <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" />
-  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white" />
-  <img src="https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white" />
-</p>
+## Featured projects
 
----
+### All Career
 
-## 📌 Projects
-- 🔗 **[Project Name 1](#)** — Short description
-- 🔗 **[Project Name 2](#)** — Short description
-- 🔗 **[More Projects](#)** on my repositories
+Job discovery and interview practice for candidates in India. The platform gathers listings from job boards, company career pages, Telegram, and hiring flyers. It brings job filters, walk-in interviews, and company-specific coding practice into one dashboard.
 
----
+[Live site](https://ragesh28.github.io/ALL_CAREER/) · [Source](https://github.com/ragesh28/ALL_CAREER)
 
-## 🌱 Interests
-- AI → AGI → ASI ⚙️
-- Generative AI | LLMs | Prompt Engineering | AI Agents | Fine-Tuning | RAG (Retrieval-Augmented Generation)
-- NLP, Computer Vision 👁️
-- Ethical Hacking with Kali Linux 🛡️
-- Android Development using **Android Studio**
-- Contributing to **Open Source** projects like **Keploy**
+### NeuralRAG · Production-Level RAG
 
----
+A self-hosted Python and FastAPI workspace for asking questions about uploaded documents. It combines document retrieval and reranking with live web search and API-provider failover.
 
-## 📫 Connect With Me
-<p align="left">
-  <a href="https://linkedin.com/in/YOUR-LINK" target="blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:lragesh28@gmail.com"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-</p>
+<img src="./assets/rag-flow.svg" width="668" alt="NeuralRAG flow from documents through retrieval and reranking to an answer">
+
+[Source](https://github.com/ragesh28/Production_Level_Rag)
+
+### AutoFill V7
+
+A Manifest V3 Chrome extension for recording and replaying browser workflows. It reuses saved form answers and can use a configured AI provider for unfamiliar fields. All Career can hand job application batches to the extension.
+
+[All Career integration](https://github.com/ragesh28/ALL_CAREER/blob/main/all-career-app/src/services/bridgeService.ts)
+
+## Skills
+
+| Area | Tools and techniques |
+| --- | --- |
+| Languages | Python, JavaScript, Java, SQL |
+| AI systems | RAG, LangChain, LangGraph, vector search, tool calling |
+| Web and automation | FastAPI, REST APIs, Chrome Manifest V3, GitHub Actions, n8n |
+| Data | Exploratory data analysis, data cleaning, ingestion pipelines |

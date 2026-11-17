@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 668 82" role="img" aria-labelledby="title description">
+  <title id="title">NeuralRAG document question answering</title>
+  <desc id="description">An animated signal moves from documents through retrieval and reranking to an answer.</desc>
+  <style>
+    text { font: 600 14px system-ui, sans-serif; fill: #cadfd1; text-anchor: middle; }
+    .signal { display: none; }
+    @media (prefers-reduced-motion: no-preference) {
+      .signal { display: inline; animation: travel 6s linear infinite; }
+    }
+    @keyframes travel {
+      0%, 10% { transform: translateX(0); opacity: 0; }
+      15% { opacity: 1; }
+      64% { opacity: 1; }
+      70%, 100% { transform: translateX(492px); opacity: 0; }
+    }
+  </style>
+  <rect x="0.5" y="0.5" width="667" height="81" rx="10" fill="#0c1510" stroke="#2c4235"/>
+  <path d="M88 28H580" stroke="#395e48" stroke-width="2"/>
+  <g fill="#163524" stroke="#67d486" stroke-width="2">
+    <rect x="83" y="23" width="10" height="10" rx="2"/>
+    <rect x="247" y="23" width="10" height="10" rx="2"/>
+    <rect x="411" y="23" width="10" height="10" rx="2"/>
+    <rect x="575" y="23" width="10" height="10" rx="2"/>
+  </g>
+  <rect class="signal" x="84.5" y="24.5" width="7" height="7" rx="1" fill="#b6ffc7"/>
+  <text x="88" y="59">Documents</text>
+  <text x="252" y="59">Retrieve</text>
+  <text x="416" y="59">Rerank</text>
+  <text x="580" y="59">Answer</text>
+</svg>

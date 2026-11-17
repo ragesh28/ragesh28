@@ -1,0 +1,35 @@
+name: Refresh contribution animation
+
+on:
+  schedule:
+    - cron: '23 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-contributions-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Update the embedded calendar
+        env:
+          PROFILE_USER: ${{ github.repository_owner }}
+        run: python3 scripts/update_contributions.py "$PROFILE_USER"
+      - name: Commit refreshed contribution days
+        run: |
+          if git diff --quiet -- assets/animation.svg; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/animation.svg
+          git commit -m 'Refresh public GitHub contribution calendar'
+          git push
