@@ -136,7 +136,7 @@ def render_calendar(days):
         if day.level:
             delay = REVEAL_START + (REVEAL_LAST - REVEAL_START) * active_index / max(active_count - 1, 1)
             noun = 'contribution' if day.count == 1 else 'contributions'
-            tiles.append(f'{tile} class="day" style="--on:{delay:.3f}s">'
+            tiles.append(f'{tile} class="day" style="--tier:{COLORS[day.level]};--on:{delay:.3f}s">'
                          f'<title>{day.date} · {day.count:,} {noun}</title></rect>')
             active_index += 1
         else:

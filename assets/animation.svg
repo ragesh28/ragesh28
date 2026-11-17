@@ -25,22 +25,22 @@
       .legend-more { transform: translateX(7px); }
     }
     @media (prefers-reduced-motion: no-preference) {
-      .intro { display: inline; animation: hide-intro 9s steps(1, end) both; }
-      .frame { animation: scene 3s var(--start) both; }
-      .pixel-text { animation: write 3s var(--start) both; }
-      .progress { transform-origin: 44px; animation: progress 9s linear both; }
-      .calendar { animation: appear 0.2s 9s both; }
-      .day { animation: light-up 0.12s var(--on) both; }
+      .intro { display: inline; animation: intro 16s infinite; }
+      .frame { opacity: 0; animation: scene 16s var(--start) infinite; }
+      .pixel-text { animation: write 16s var(--start) infinite; }
+      .progress { transform-origin: 44px; animation: progress 16s linear infinite; }
+      .calendar { animation: calendar 16s infinite; }
+      .day { animation: light-up 16s var(--on) infinite backwards; }
     }
-    @keyframes hide-intro { from { opacity: 1; } to { opacity: 0; } }
-    @keyframes scene { 0%, 100% { opacity: 0; } 2%, 93% { opacity: 1; } }
+    @keyframes intro { 0%, 55% { opacity: 1; } 56.25%, 99% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes scene { 0%, 18.75%, 100% { opacity: 0; } 0.5%, 17% { opacity: 1; } }
     @keyframes write {
       0% { clip-path: inset(0 50%); }
-      20%, 100% { clip-path: inset(0); }
+      4%, 100% { clip-path: inset(0); }
     }
-    @keyframes progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes light-up { from { fill: #17241e; } }
+    @keyframes progress { 0% { transform: scaleX(0); } 56.25%, 100% { transform: scaleX(1); } }
+    @keyframes calendar { 0%, 56.25%, 100% { opacity: 0; } 57.5%, 98% { opacity: 1; } }
+    @keyframes light-up { 0%, 60%, 100% { fill: #17241e; } 0.75%, 46% { fill: var(--tier); } }
   </style>
 
   <rect x="0.5" y="0.5" width="831" height="213" rx="14" fill="#0c1510" stroke="#2c4235"/>
@@ -56,10 +56,10 @@
       <text id="greeting" class="pixel-text" x="416" y="131.96">HELLO, I'M RAGESH</text>
     </g>
     <g class="frame" style="--start:3s" opacity="0">
-      <text id="learning" class="pixel-text" x="416" y="131.96">I LEARN DAILY</text>
+      <text id="learning" class="pixel-text" x="416" y="131.96">I BUILD AI TOOLS</text>
     </g>
     <g class="frame" style="--start:6s" opacity="0">
-      <text id="problem-solving" class="pixel-text" x="416" y="131.96">I SOLVE PROBLEMS</text>
+      <text id="problem-solving" class="pixel-text" x="416" y="131.96">RAG &amp; WORKFLOWS</text>
     </g>
 
     <rect x="44" y="174" width="744" height="2" rx="1" fill="#22352a"/>
@@ -90,7 +90,7 @@
         <rect x="73" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2025-11-18"/>
         <rect x="73" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2025-11-19"/>
         <rect x="73" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2025-11-20"/>
-        <rect x="73" y="142" width="10" height="10" rx="2" fill="#2a9b52" data-date="2025-11-21" class="day" style="--on:9.000s"><title>2025-11-21 · 9 contributions</title></rect>
+        <rect x="73" y="142" width="10" height="10" rx="2" fill="#2a9b52" data-date="2025-11-21" class="day" style="--tier:#2a9b52;--on:9.000s"><title>2025-11-21 · 9 contributions</title></rect>
         <rect x="73" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2025-11-22"/>
         <rect x="86" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2025-11-23"/>
         <rect x="86" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2025-11-24"/>
@@ -109,12 +109,12 @@
         <rect x="112" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-07"/>
         <rect x="112" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-08"/>
         <rect x="112" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-09"/>
-        <rect x="112" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2025-12-10" class="day" style="--on:9.026s"><title>2025-12-10 · 11 contributions</title></rect>
-        <rect x="112" y="129" width="10" height="10" rx="2" fill="#1b6840" data-date="2025-12-11" class="day" style="--on:9.053s"><title>2025-12-11 · 5 contributions</title></rect>
+        <rect x="112" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2025-12-10" class="day" style="--tier:#50d475;--on:9.026s"><title>2025-12-10 · 11 contributions</title></rect>
+        <rect x="112" y="129" width="10" height="10" rx="2" fill="#1b6840" data-date="2025-12-11" class="day" style="--tier:#1b6840;--on:9.053s"><title>2025-12-11 · 5 contributions</title></rect>
         <rect x="112" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-12"/>
         <rect x="112" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-13"/>
-        <rect x="125" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2025-12-14" class="day" style="--on:9.079s"><title>2025-12-14 · 1 contribution</title></rect>
-        <rect x="125" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2025-12-15" class="day" style="--on:9.106s"><title>2025-12-15 · 2 contributions</title></rect>
+        <rect x="125" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2025-12-14" class="day" style="--tier:#19452e;--on:9.079s"><title>2025-12-14 · 1 contribution</title></rect>
+        <rect x="125" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2025-12-15" class="day" style="--tier:#19452e;--on:9.106s"><title>2025-12-15 · 2 contributions</title></rect>
         <rect x="125" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-16"/>
         <rect x="125" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-17"/>
         <rect x="125" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2025-12-18"/>
@@ -182,13 +182,13 @@
         <rect x="242" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-18"/>
         <rect x="242" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-19"/>
         <rect x="242" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-20"/>
-        <rect x="242" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-02-21" class="day" style="--on:9.132s"><title>2026-02-21 · 3 contributions</title></rect>
-        <rect x="255" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-02-22" class="day" style="--on:9.159s"><title>2026-02-22 · 1 contribution</title></rect>
+        <rect x="242" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-02-21" class="day" style="--tier:#19452e;--on:9.132s"><title>2026-02-21 · 3 contributions</title></rect>
+        <rect x="255" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-02-22" class="day" style="--tier:#19452e;--on:9.159s"><title>2026-02-22 · 1 contribution</title></rect>
         <rect x="255" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-23"/>
         <rect x="255" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-24"/>
         <rect x="255" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-25"/>
         <rect x="255" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-26"/>
-        <rect x="255" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-02-27" class="day" style="--on:9.185s"><title>2026-02-27 · 2 contributions</title></rect>
+        <rect x="255" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-02-27" class="day" style="--tier:#19452e;--on:9.185s"><title>2026-02-27 · 2 contributions</title></rect>
         <rect x="255" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-02-28"/>
         <rect x="268" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-01"/>
         <rect x="268" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-02"/>
@@ -197,34 +197,34 @@
         <rect x="268" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-05"/>
         <rect x="268" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-06"/>
         <rect x="268" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-07"/>
-        <rect x="281" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-03-08" class="day" style="--on:9.211s"><title>2026-03-08 · 8 contributions</title></rect>
+        <rect x="281" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-03-08" class="day" style="--tier:#2a9b52;--on:9.211s"><title>2026-03-08 · 8 contributions</title></rect>
         <rect x="281" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-09"/>
         <rect x="281" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-10"/>
         <rect x="281" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-11"/>
-        <rect x="281" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-12" class="day" style="--on:9.238s"><title>2026-03-12 · 3 contributions</title></rect>
+        <rect x="281" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-12" class="day" style="--tier:#19452e;--on:9.238s"><title>2026-03-12 · 3 contributions</title></rect>
         <rect x="281" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-13"/>
-        <rect x="281" y="155" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-03-14" class="day" style="--on:9.264s"><title>2026-03-14 · 7 contributions</title></rect>
-        <rect x="294" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-03-15" class="day" style="--on:9.291s"><title>2026-03-15 · 9 contributions</title></rect>
-        <rect x="294" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-16" class="day" style="--on:9.317s"><title>2026-03-16 · 1 contribution</title></rect>
-        <rect x="294" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-03-17" class="day" style="--on:9.343s"><title>2026-03-17 · 10 contributions</title></rect>
+        <rect x="281" y="155" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-03-14" class="day" style="--tier:#2a9b52;--on:9.264s"><title>2026-03-14 · 7 contributions</title></rect>
+        <rect x="294" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-03-15" class="day" style="--tier:#2a9b52;--on:9.291s"><title>2026-03-15 · 9 contributions</title></rect>
+        <rect x="294" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-16" class="day" style="--tier:#19452e;--on:9.317s"><title>2026-03-16 · 1 contribution</title></rect>
+        <rect x="294" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-03-17" class="day" style="--tier:#50d475;--on:9.343s"><title>2026-03-17 · 10 contributions</title></rect>
         <rect x="294" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-18"/>
-        <rect x="294" y="129" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-03-19" class="day" style="--on:9.370s"><title>2026-03-19 · 4 contributions</title></rect>
+        <rect x="294" y="129" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-03-19" class="day" style="--tier:#1b6840;--on:9.370s"><title>2026-03-19 · 4 contributions</title></rect>
         <rect x="294" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-20"/>
         <rect x="294" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-21"/>
-        <rect x="307" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-22" class="day" style="--on:9.396s"><title>2026-03-22 · 1 contribution</title></rect>
-        <rect x="307" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-23" class="day" style="--on:9.423s"><title>2026-03-23 · 1 contribution</title></rect>
+        <rect x="307" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-22" class="day" style="--tier:#19452e;--on:9.396s"><title>2026-03-22 · 1 contribution</title></rect>
+        <rect x="307" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-03-23" class="day" style="--tier:#19452e;--on:9.423s"><title>2026-03-23 · 1 contribution</title></rect>
         <rect x="307" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-24"/>
         <rect x="307" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-25"/>
         <rect x="307" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-26"/>
         <rect x="307" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-27"/>
         <rect x="307" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-28"/>
         <rect x="320" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-29"/>
-        <rect x="320" y="90" width="10" height="10" rx="2" fill="#50d475" data-date="2026-03-30" class="day" style="--on:9.449s"><title>2026-03-30 · 12 contributions</title></rect>
+        <rect x="320" y="90" width="10" height="10" rx="2" fill="#50d475" data-date="2026-03-30" class="day" style="--tier:#50d475;--on:9.449s"><title>2026-03-30 · 12 contributions</title></rect>
         <rect x="320" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-03-31"/>
         <rect x="320" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-01"/>
-        <rect x="320" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-02" class="day" style="--on:9.476s"><title>2026-04-02 · 2 contributions</title></rect>
-        <rect x="320" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-03" class="day" style="--on:9.502s"><title>2026-04-03 · 1 contribution</title></rect>
-        <rect x="320" y="155" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-04-04" class="day" style="--on:9.528s"><title>2026-04-04 · 8 contributions</title></rect>
+        <rect x="320" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-02" class="day" style="--tier:#19452e;--on:9.476s"><title>2026-04-02 · 2 contributions</title></rect>
+        <rect x="320" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-03" class="day" style="--tier:#19452e;--on:9.502s"><title>2026-04-03 · 1 contribution</title></rect>
+        <rect x="320" y="155" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-04-04" class="day" style="--tier:#2a9b52;--on:9.528s"><title>2026-04-04 · 8 contributions</title></rect>
         <rect x="333" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-05"/>
         <rect x="333" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-06"/>
         <rect x="333" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-07"/>
@@ -234,15 +234,15 @@
         <rect x="333" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-11"/>
         <rect x="346" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-12"/>
         <rect x="346" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-13"/>
-        <rect x="346" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-14" class="day" style="--on:9.555s"><title>2026-04-14 · 2 contributions</title></rect>
+        <rect x="346" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-14" class="day" style="--tier:#19452e;--on:9.555s"><title>2026-04-14 · 2 contributions</title></rect>
         <rect x="346" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-15"/>
-        <rect x="346" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-16" class="day" style="--on:9.581s"><title>2026-04-16 · 3 contributions</title></rect>
-        <rect x="346" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-04-17" class="day" style="--on:9.608s"><title>2026-04-17 · 4 contributions</title></rect>
+        <rect x="346" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-16" class="day" style="--tier:#19452e;--on:9.581s"><title>2026-04-16 · 3 contributions</title></rect>
+        <rect x="346" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-04-17" class="day" style="--tier:#1b6840;--on:9.608s"><title>2026-04-17 · 4 contributions</title></rect>
         <rect x="346" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-18"/>
-        <rect x="359" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-19" class="day" style="--on:9.634s"><title>2026-04-19 · 1 contribution</title></rect>
+        <rect x="359" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-19" class="day" style="--tier:#19452e;--on:9.634s"><title>2026-04-19 · 1 contribution</title></rect>
         <rect x="359" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-20"/>
         <rect x="359" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-21"/>
-        <rect x="359" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-22" class="day" style="--on:9.661s"><title>2026-04-22 · 2 contributions</title></rect>
+        <rect x="359" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-04-22" class="day" style="--tier:#19452e;--on:9.661s"><title>2026-04-22 · 2 contributions</title></rect>
         <rect x="359" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-23"/>
         <rect x="359" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-24"/>
         <rect x="359" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-04-25"/>
@@ -262,20 +262,20 @@
         <rect x="385" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-09"/>
         <rect x="398" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-10"/>
         <rect x="398" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-11"/>
-        <rect x="398" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-05-12" class="day" style="--on:9.687s"><title>2026-05-12 · 10 contributions</title></rect>
-        <rect x="398" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2026-05-13" class="day" style="--on:9.713s"><title>2026-05-13 · 15 contributions</title></rect>
+        <rect x="398" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-05-12" class="day" style="--tier:#50d475;--on:9.687s"><title>2026-05-12 · 10 contributions</title></rect>
+        <rect x="398" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2026-05-13" class="day" style="--tier:#50d475;--on:9.713s"><title>2026-05-13 · 15 contributions</title></rect>
         <rect x="398" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-14"/>
-        <rect x="398" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-05-15" class="day" style="--on:9.740s"><title>2026-05-15 · 1 contribution</title></rect>
-        <rect x="398" y="155" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-05-16" class="day" style="--on:9.766s"><title>2026-05-16 · 7 contributions</title></rect>
+        <rect x="398" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-05-15" class="day" style="--tier:#19452e;--on:9.740s"><title>2026-05-15 · 1 contribution</title></rect>
+        <rect x="398" y="155" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-05-16" class="day" style="--tier:#2a9b52;--on:9.766s"><title>2026-05-16 · 7 contributions</title></rect>
         <rect x="411" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-17"/>
-        <rect x="411" y="90" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-05-18" class="day" style="--on:9.793s"><title>2026-05-18 · 7 contributions</title></rect>
-        <rect x="411" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-05-19" class="day" style="--on:9.819s"><title>2026-05-19 · 12 contributions</title></rect>
+        <rect x="411" y="90" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-05-18" class="day" style="--tier:#2a9b52;--on:9.793s"><title>2026-05-18 · 7 contributions</title></rect>
+        <rect x="411" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-05-19" class="day" style="--tier:#50d475;--on:9.819s"><title>2026-05-19 · 12 contributions</title></rect>
         <rect x="411" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-20"/>
         <rect x="411" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-21"/>
         <rect x="411" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-22"/>
-        <rect x="411" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-05-23" class="day" style="--on:9.846s"><title>2026-05-23 · 3 contributions</title></rect>
+        <rect x="411" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-05-23" class="day" style="--tier:#19452e;--on:9.846s"><title>2026-05-23 · 3 contributions</title></rect>
         <rect x="424" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-24"/>
-        <rect x="424" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-05-25" class="day" style="--on:9.872s"><title>2026-05-25 · 1 contribution</title></rect>
+        <rect x="424" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-05-25" class="day" style="--tier:#19452e;--on:9.872s"><title>2026-05-25 · 1 contribution</title></rect>
         <rect x="424" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-26"/>
         <rect x="424" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-27"/>
         <rect x="424" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-28"/>
@@ -283,52 +283,52 @@
         <rect x="424" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-30"/>
         <rect x="437" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-05-31"/>
         <rect x="437" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-01"/>
-        <rect x="437" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-02" class="day" style="--on:9.898s"><title>2026-06-02 · 1 contribution</title></rect>
+        <rect x="437" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-02" class="day" style="--tier:#19452e;--on:9.898s"><title>2026-06-02 · 1 contribution</title></rect>
         <rect x="437" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-03"/>
-        <rect x="437" y="129" width="10" height="10" rx="2" fill="#50d475" data-date="2026-06-04" class="day" style="--on:9.925s"><title>2026-06-04 · 14 contributions</title></rect>
-        <rect x="437" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-06-05" class="day" style="--on:9.951s"><title>2026-06-05 · 4 contributions</title></rect>
-        <rect x="437" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-06" class="day" style="--on:9.978s"><title>2026-06-06 · 2 contributions</title></rect>
-        <rect x="450" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-07" class="day" style="--on:10.004s"><title>2026-06-07 · 9 contributions</title></rect>
-        <rect x="450" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-08" class="day" style="--on:10.030s"><title>2026-06-08 · 1 contribution</title></rect>
-        <rect x="450" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-09" class="day" style="--on:10.057s"><title>2026-06-09 · 1 contribution</title></rect>
-        <rect x="450" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-10" class="day" style="--on:10.083s"><title>2026-06-10 · 2 contributions</title></rect>
-        <rect x="450" y="129" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-11" class="day" style="--on:10.110s"><title>2026-06-11 · 9 contributions</title></rect>
-        <rect x="450" y="142" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-12" class="day" style="--on:10.136s"><title>2026-06-12 · 7 contributions</title></rect>
+        <rect x="437" y="129" width="10" height="10" rx="2" fill="#50d475" data-date="2026-06-04" class="day" style="--tier:#50d475;--on:9.925s"><title>2026-06-04 · 14 contributions</title></rect>
+        <rect x="437" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-06-05" class="day" style="--tier:#1b6840;--on:9.951s"><title>2026-06-05 · 4 contributions</title></rect>
+        <rect x="437" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-06" class="day" style="--tier:#19452e;--on:9.978s"><title>2026-06-06 · 2 contributions</title></rect>
+        <rect x="450" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-07" class="day" style="--tier:#2a9b52;--on:10.004s"><title>2026-06-07 · 9 contributions</title></rect>
+        <rect x="450" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-08" class="day" style="--tier:#19452e;--on:10.030s"><title>2026-06-08 · 1 contribution</title></rect>
+        <rect x="450" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-09" class="day" style="--tier:#19452e;--on:10.057s"><title>2026-06-09 · 1 contribution</title></rect>
+        <rect x="450" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-10" class="day" style="--tier:#19452e;--on:10.083s"><title>2026-06-10 · 2 contributions</title></rect>
+        <rect x="450" y="129" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-11" class="day" style="--tier:#2a9b52;--on:10.110s"><title>2026-06-11 · 9 contributions</title></rect>
+        <rect x="450" y="142" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-12" class="day" style="--tier:#2a9b52;--on:10.136s"><title>2026-06-12 · 7 contributions</title></rect>
         <rect x="450" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-13"/>
-        <rect x="463" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-14" class="day" style="--on:10.163s"><title>2026-06-14 · 9 contributions</title></rect>
-        <rect x="463" y="90" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-06-15" class="day" style="--on:10.189s"><title>2026-06-15 · 4 contributions</title></rect>
+        <rect x="463" y="77" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-06-14" class="day" style="--tier:#2a9b52;--on:10.163s"><title>2026-06-14 · 9 contributions</title></rect>
+        <rect x="463" y="90" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-06-15" class="day" style="--tier:#1b6840;--on:10.189s"><title>2026-06-15 · 4 contributions</title></rect>
         <rect x="463" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-16"/>
-        <rect x="463" y="116" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-06-17" class="day" style="--on:10.215s"><title>2026-06-17 · 5 contributions</title></rect>
+        <rect x="463" y="116" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-06-17" class="day" style="--tier:#1b6840;--on:10.215s"><title>2026-06-17 · 5 contributions</title></rect>
         <rect x="463" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-18"/>
         <rect x="463" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-19"/>
         <rect x="463" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-20"/>
         <rect x="476" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-21"/>
         <rect x="476" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-22"/>
-        <rect x="476" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-06-23" class="day" style="--on:10.242s"><title>2026-06-23 · 17 contributions</title></rect>
-        <rect x="476" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-24" class="day" style="--on:10.268s"><title>2026-06-24 · 1 contribution</title></rect>
+        <rect x="476" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-06-23" class="day" style="--tier:#50d475;--on:10.242s"><title>2026-06-23 · 17 contributions</title></rect>
+        <rect x="476" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-24" class="day" style="--tier:#19452e;--on:10.268s"><title>2026-06-24 · 1 contribution</title></rect>
         <rect x="476" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-25"/>
         <rect x="476" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-26"/>
         <rect x="476" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-27"/>
         <rect x="489" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-06-28"/>
-        <rect x="489" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-29" class="day" style="--on:10.295s"><title>2026-06-29 · 1 contribution</title></rect>
-        <rect x="489" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-30" class="day" style="--on:10.321s"><title>2026-06-30 · 1 contribution</title></rect>
-        <rect x="489" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-01" class="day" style="--on:10.348s"><title>2026-07-01 · 1 contribution</title></rect>
-        <rect x="489" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-02" class="day" style="--on:10.374s"><title>2026-07-02 · 3 contributions</title></rect>
-        <rect x="489" y="142" width="10" height="10" rx="2" fill="#50d475" data-date="2026-07-03" class="day" style="--on:10.400s"><title>2026-07-03 · 15 contributions</title></rect>
-        <rect x="489" y="155" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-07-04" class="day" style="--on:10.427s"><title>2026-07-04 · 4 contributions</title></rect>
-        <rect x="502" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-05" class="day" style="--on:10.453s"><title>2026-07-05 · 2 contributions</title></rect>
+        <rect x="489" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-29" class="day" style="--tier:#19452e;--on:10.295s"><title>2026-06-29 · 1 contribution</title></rect>
+        <rect x="489" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-06-30" class="day" style="--tier:#19452e;--on:10.321s"><title>2026-06-30 · 1 contribution</title></rect>
+        <rect x="489" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-01" class="day" style="--tier:#19452e;--on:10.348s"><title>2026-07-01 · 1 contribution</title></rect>
+        <rect x="489" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-02" class="day" style="--tier:#19452e;--on:10.374s"><title>2026-07-02 · 3 contributions</title></rect>
+        <rect x="489" y="142" width="10" height="10" rx="2" fill="#50d475" data-date="2026-07-03" class="day" style="--tier:#50d475;--on:10.400s"><title>2026-07-03 · 15 contributions</title></rect>
+        <rect x="489" y="155" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-07-04" class="day" style="--tier:#1b6840;--on:10.427s"><title>2026-07-04 · 4 contributions</title></rect>
+        <rect x="502" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-05" class="day" style="--tier:#19452e;--on:10.453s"><title>2026-07-05 · 2 contributions</title></rect>
         <rect x="502" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-06"/>
-        <rect x="502" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-07-07" class="day" style="--on:10.480s"><title>2026-07-07 · 13 contributions</title></rect>
-        <rect x="502" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2026-07-08" class="day" style="--on:10.506s"><title>2026-07-08 · 12 contributions</title></rect>
+        <rect x="502" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-07-07" class="day" style="--tier:#50d475;--on:10.480s"><title>2026-07-07 · 13 contributions</title></rect>
+        <rect x="502" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2026-07-08" class="day" style="--tier:#50d475;--on:10.506s"><title>2026-07-08 · 12 contributions</title></rect>
         <rect x="502" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-09"/>
         <rect x="502" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-10"/>
         <rect x="502" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-11"/>
-        <rect x="515" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-12" class="day" style="--on:10.532s"><title>2026-07-12 · 2 contributions</title></rect>
-        <rect x="515" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-13" class="day" style="--on:10.559s"><title>2026-07-13 · 2 contributions</title></rect>
-        <rect x="515" y="103" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-07-14" class="day" style="--on:10.585s"><title>2026-07-14 · 6 contributions</title></rect>
-        <rect x="515" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-15" class="day" style="--on:10.612s"><title>2026-07-15 · 3 contributions</title></rect>
-        <rect x="515" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-16" class="day" style="--on:10.638s"><title>2026-07-16 · 2 contributions</title></rect>
-        <rect x="515" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-17" class="day" style="--on:10.665s"><title>2026-07-17 · 2 contributions</title></rect>
+        <rect x="515" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-12" class="day" style="--tier:#19452e;--on:10.532s"><title>2026-07-12 · 2 contributions</title></rect>
+        <rect x="515" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-13" class="day" style="--tier:#19452e;--on:10.559s"><title>2026-07-13 · 2 contributions</title></rect>
+        <rect x="515" y="103" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-07-14" class="day" style="--tier:#1b6840;--on:10.585s"><title>2026-07-14 · 6 contributions</title></rect>
+        <rect x="515" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-15" class="day" style="--tier:#19452e;--on:10.612s"><title>2026-07-15 · 3 contributions</title></rect>
+        <rect x="515" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-16" class="day" style="--tier:#19452e;--on:10.638s"><title>2026-07-16 · 2 contributions</title></rect>
+        <rect x="515" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-17" class="day" style="--tier:#19452e;--on:10.665s"><title>2026-07-17 · 2 contributions</title></rect>
         <rect x="515" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-18"/>
         <rect x="528" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-19"/>
         <rect x="528" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-20"/>
@@ -342,7 +342,7 @@
         <rect x="541" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-28"/>
         <rect x="541" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-29"/>
         <rect x="541" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-07-30"/>
-        <rect x="541" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-31" class="day" style="--on:10.691s"><title>2026-07-31 · 1 contribution</title></rect>
+        <rect x="541" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-07-31" class="day" style="--tier:#19452e;--on:10.691s"><title>2026-07-31 · 1 contribution</title></rect>
         <rect x="541" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-01"/>
         <rect x="554" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-02"/>
         <rect x="554" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-03"/>
@@ -365,59 +365,59 @@
         <rect x="580" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-20"/>
         <rect x="580" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-21"/>
         <rect x="580" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-22"/>
-        <rect x="593" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-23" class="day" style="--on:10.717s"><title>2026-08-23 · 1 contribution</title></rect>
+        <rect x="593" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-23" class="day" style="--tier:#19452e;--on:10.717s"><title>2026-08-23 · 1 contribution</title></rect>
         <rect x="593" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-24"/>
         <rect x="593" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-25"/>
-        <rect x="593" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-26" class="day" style="--on:10.744s"><title>2026-08-26 · 1 contribution</title></rect>
-        <rect x="593" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-27" class="day" style="--on:10.770s"><title>2026-08-27 · 3 contributions</title></rect>
-        <rect x="593" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-08-28" class="day" style="--on:10.797s"><title>2026-08-28 · 5 contributions</title></rect>
+        <rect x="593" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-26" class="day" style="--tier:#19452e;--on:10.744s"><title>2026-08-26 · 1 contribution</title></rect>
+        <rect x="593" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-27" class="day" style="--tier:#19452e;--on:10.770s"><title>2026-08-27 · 3 contributions</title></rect>
+        <rect x="593" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-08-28" class="day" style="--tier:#1b6840;--on:10.797s"><title>2026-08-28 · 5 contributions</title></rect>
         <rect x="593" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-08-29"/>
-        <rect x="606" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-30" class="day" style="--on:10.823s"><title>2026-08-30 · 3 contributions</title></rect>
-        <rect x="606" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-31" class="day" style="--on:10.850s"><title>2026-08-31 · 2 contributions</title></rect>
-        <rect x="606" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-01" class="day" style="--on:10.876s"><title>2026-09-01 · 10 contributions</title></rect>
-        <rect x="606" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-02" class="day" style="--on:10.902s"><title>2026-09-02 · 3 contributions</title></rect>
-        <rect x="606" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-03" class="day" style="--on:10.929s"><title>2026-09-03 · 2 contributions</title></rect>
-        <rect x="606" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-09-04" class="day" style="--on:10.955s"><title>2026-09-04 · 4 contributions</title></rect>
-        <rect x="606" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-05" class="day" style="--on:10.982s"><title>2026-09-05 · 3 contributions</title></rect>
-        <rect x="619" y="77" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-06" class="day" style="--on:11.008s"><title>2026-09-06 · 13 contributions</title></rect>
-        <rect x="619" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-07" class="day" style="--on:11.034s"><title>2026-09-07 · 3 contributions</title></rect>
+        <rect x="606" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-30" class="day" style="--tier:#19452e;--on:10.823s"><title>2026-08-30 · 3 contributions</title></rect>
+        <rect x="606" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-08-31" class="day" style="--tier:#19452e;--on:10.850s"><title>2026-08-31 · 2 contributions</title></rect>
+        <rect x="606" y="103" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-01" class="day" style="--tier:#50d475;--on:10.876s"><title>2026-09-01 · 10 contributions</title></rect>
+        <rect x="606" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-02" class="day" style="--tier:#19452e;--on:10.902s"><title>2026-09-02 · 3 contributions</title></rect>
+        <rect x="606" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-03" class="day" style="--tier:#19452e;--on:10.929s"><title>2026-09-03 · 2 contributions</title></rect>
+        <rect x="606" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-09-04" class="day" style="--tier:#1b6840;--on:10.955s"><title>2026-09-04 · 4 contributions</title></rect>
+        <rect x="606" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-05" class="day" style="--tier:#19452e;--on:10.982s"><title>2026-09-05 · 3 contributions</title></rect>
+        <rect x="619" y="77" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-06" class="day" style="--tier:#50d475;--on:11.008s"><title>2026-09-06 · 13 contributions</title></rect>
+        <rect x="619" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-07" class="day" style="--tier:#19452e;--on:11.034s"><title>2026-09-07 · 3 contributions</title></rect>
         <rect x="619" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-08"/>
         <rect x="619" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-09"/>
-        <rect x="619" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-10" class="day" style="--on:11.061s"><title>2026-09-10 · 1 contribution</title></rect>
+        <rect x="619" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-10" class="day" style="--tier:#19452e;--on:11.061s"><title>2026-09-10 · 1 contribution</title></rect>
         <rect x="619" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-11"/>
         <rect x="619" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-12"/>
         <rect x="632" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-13"/>
         <rect x="632" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-14"/>
-        <rect x="632" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-15" class="day" style="--on:11.087s"><title>2026-09-15 · 1 contribution</title></rect>
-        <rect x="632" y="116" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-09-16" class="day" style="--on:11.114s"><title>2026-09-16 · 6 contributions</title></rect>
-        <rect x="632" y="129" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-17" class="day" style="--on:11.140s"><title>2026-09-17 · 10 contributions</title></rect>
-        <rect x="632" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-18" class="day" style="--on:11.167s"><title>2026-09-18 · 1 contribution</title></rect>
-        <rect x="632" y="155" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-19" class="day" style="--on:11.193s"><title>2026-09-19 · 13 contributions</title></rect>
-        <rect x="645" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-20" class="day" style="--on:11.219s"><title>2026-09-20 · 1 contribution</title></rect>
-        <rect x="645" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-21" class="day" style="--on:11.246s"><title>2026-09-21 · 1 contribution</title></rect>
-        <rect x="645" y="103" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-09-22" class="day" style="--on:11.272s"><title>2026-09-22 · 8 contributions</title></rect>
-        <rect x="645" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-23" class="day" style="--on:11.299s"><title>2026-09-23 · 2 contributions</title></rect>
-        <rect x="645" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-24" class="day" style="--on:11.325s"><title>2026-09-24 · 3 contributions</title></rect>
-        <rect x="645" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-25" class="day" style="--on:11.352s"><title>2026-09-25 · 2 contributions</title></rect>
+        <rect x="632" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-15" class="day" style="--tier:#19452e;--on:11.087s"><title>2026-09-15 · 1 contribution</title></rect>
+        <rect x="632" y="116" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-09-16" class="day" style="--tier:#1b6840;--on:11.114s"><title>2026-09-16 · 6 contributions</title></rect>
+        <rect x="632" y="129" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-17" class="day" style="--tier:#50d475;--on:11.140s"><title>2026-09-17 · 10 contributions</title></rect>
+        <rect x="632" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-18" class="day" style="--tier:#19452e;--on:11.167s"><title>2026-09-18 · 1 contribution</title></rect>
+        <rect x="632" y="155" width="10" height="10" rx="2" fill="#50d475" data-date="2026-09-19" class="day" style="--tier:#50d475;--on:11.193s"><title>2026-09-19 · 13 contributions</title></rect>
+        <rect x="645" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-20" class="day" style="--tier:#19452e;--on:11.219s"><title>2026-09-20 · 1 contribution</title></rect>
+        <rect x="645" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-21" class="day" style="--tier:#19452e;--on:11.246s"><title>2026-09-21 · 1 contribution</title></rect>
+        <rect x="645" y="103" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-09-22" class="day" style="--tier:#2a9b52;--on:11.272s"><title>2026-09-22 · 8 contributions</title></rect>
+        <rect x="645" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-23" class="day" style="--tier:#19452e;--on:11.299s"><title>2026-09-23 · 2 contributions</title></rect>
+        <rect x="645" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-24" class="day" style="--tier:#19452e;--on:11.325s"><title>2026-09-24 · 3 contributions</title></rect>
+        <rect x="645" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-09-25" class="day" style="--tier:#19452e;--on:11.352s"><title>2026-09-25 · 2 contributions</title></rect>
         <rect x="645" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-26"/>
         <rect x="658" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-27"/>
         <rect x="658" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-28"/>
         <rect x="658" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-29"/>
         <rect x="658" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-09-30"/>
-        <rect x="658" y="129" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-10-01" class="day" style="--on:11.378s"><title>2026-10-01 · 4 contributions</title></rect>
+        <rect x="658" y="129" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-10-01" class="day" style="--tier:#1b6840;--on:11.378s"><title>2026-10-01 · 4 contributions</title></rect>
         <rect x="658" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-02"/>
         <rect x="658" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-03"/>
         <rect x="671" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-04"/>
-        <rect x="671" y="90" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-10-05" class="day" style="--on:11.404s"><title>2026-10-05 · 5 contributions</title></rect>
-        <rect x="671" y="103" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-10-06" class="day" style="--on:11.431s"><title>2026-10-06 · 9 contributions</title></rect>
+        <rect x="671" y="90" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-10-05" class="day" style="--tier:#1b6840;--on:11.404s"><title>2026-10-05 · 5 contributions</title></rect>
+        <rect x="671" y="103" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-10-06" class="day" style="--tier:#2a9b52;--on:11.431s"><title>2026-10-06 · 9 contributions</title></rect>
         <rect x="671" y="116" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-07"/>
-        <rect x="671" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-10-08" class="day" style="--on:11.457s"><title>2026-10-08 · 1 contribution</title></rect>
+        <rect x="671" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-10-08" class="day" style="--tier:#19452e;--on:11.457s"><title>2026-10-08 · 1 contribution</title></rect>
         <rect x="671" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-09"/>
         <rect x="671" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-10"/>
         <rect x="684" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-11"/>
-        <rect x="684" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-10-12" class="day" style="--on:11.484s"><title>2026-10-12 · 2 contributions</title></rect>
-        <rect x="684" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-10-13" class="day" style="--on:11.510s"><title>2026-10-13 · 2 contributions</title></rect>
-        <rect x="684" y="116" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-10-14" class="day" style="--on:11.537s"><title>2026-10-14 · 7 contributions</title></rect>
+        <rect x="684" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-10-12" class="day" style="--tier:#19452e;--on:11.484s"><title>2026-10-12 · 2 contributions</title></rect>
+        <rect x="684" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-10-13" class="day" style="--tier:#19452e;--on:11.510s"><title>2026-10-13 · 2 contributions</title></rect>
+        <rect x="684" y="116" width="10" height="10" rx="2" fill="#2a9b52" data-date="2026-10-14" class="day" style="--tier:#2a9b52;--on:11.537s"><title>2026-10-14 · 7 contributions</title></rect>
         <rect x="684" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-15"/>
         <rect x="684" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-16"/>
         <rect x="684" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-17"/>
@@ -435,25 +435,25 @@
         <rect x="710" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-29"/>
         <rect x="710" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-30"/>
         <rect x="710" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-10-31"/>
-        <rect x="723" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-01" class="day" style="--on:11.563s"><title>2026-11-01 · 1 contribution</title></rect>
+        <rect x="723" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-01" class="day" style="--tier:#19452e;--on:11.563s"><title>2026-11-01 · 1 contribution</title></rect>
         <rect x="723" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-02"/>
-        <rect x="723" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-03" class="day" style="--on:11.589s"><title>2026-11-03 · 1 contribution</title></rect>
-        <rect x="723" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2026-11-04" class="day" style="--on:11.616s"><title>2026-11-04 · 17 contributions</title></rect>
+        <rect x="723" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-03" class="day" style="--tier:#19452e;--on:11.589s"><title>2026-11-03 · 1 contribution</title></rect>
+        <rect x="723" y="116" width="10" height="10" rx="2" fill="#50d475" data-date="2026-11-04" class="day" style="--tier:#50d475;--on:11.616s"><title>2026-11-04 · 17 contributions</title></rect>
         <rect x="723" y="129" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-05"/>
-        <rect x="723" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-06" class="day" style="--on:11.642s"><title>2026-11-06 · 3 contributions</title></rect>
-        <rect x="723" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-07" class="day" style="--on:11.669s"><title>2026-11-07 · 2 contributions</title></rect>
-        <rect x="736" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-08" class="day" style="--on:11.695s"><title>2026-11-08 · 1 contribution</title></rect>
+        <rect x="723" y="142" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-06" class="day" style="--tier:#19452e;--on:11.642s"><title>2026-11-06 · 3 contributions</title></rect>
+        <rect x="723" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-07" class="day" style="--tier:#19452e;--on:11.669s"><title>2026-11-07 · 2 contributions</title></rect>
+        <rect x="736" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-08" class="day" style="--tier:#19452e;--on:11.695s"><title>2026-11-08 · 1 contribution</title></rect>
         <rect x="736" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-09"/>
         <rect x="736" y="103" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-10"/>
-        <rect x="736" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-11" class="day" style="--on:11.721s"><title>2026-11-11 · 3 contributions</title></rect>
-        <rect x="736" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-12" class="day" style="--on:11.748s"><title>2026-11-12 · 3 contributions</title></rect>
-        <rect x="736" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-11-13" class="day" style="--on:11.774s"><title>2026-11-13 · 6 contributions</title></rect>
-        <rect x="736" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-14" class="day" style="--on:11.801s"><title>2026-11-14 · 2 contributions</title></rect>
-        <rect x="749" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-15" class="day" style="--on:11.827s"><title>2026-11-15 · 2 contributions</title></rect>
-        <rect x="749" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-16" class="day" style="--on:11.854s"><title>2026-11-16 · 2 contributions</title></rect>
-        <rect x="749" y="103" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-17" class="day" style="--on:11.880s"><title>2026-11-17 · 3 contributions</title></rect>
+        <rect x="736" y="116" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-11" class="day" style="--tier:#19452e;--on:11.721s"><title>2026-11-11 · 3 contributions</title></rect>
+        <rect x="736" y="129" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-12" class="day" style="--tier:#19452e;--on:11.748s"><title>2026-11-12 · 3 contributions</title></rect>
+        <rect x="736" y="142" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-11-13" class="day" style="--tier:#1b6840;--on:11.774s"><title>2026-11-13 · 6 contributions</title></rect>
+        <rect x="736" y="155" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-14" class="day" style="--tier:#19452e;--on:11.801s"><title>2026-11-14 · 2 contributions</title></rect>
+        <rect x="749" y="77" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-15" class="day" style="--tier:#19452e;--on:11.827s"><title>2026-11-15 · 2 contributions</title></rect>
+        <rect x="749" y="90" width="10" height="10" rx="2" fill="#19452e" data-date="2026-11-16" class="day" style="--tier:#19452e;--on:11.854s"><title>2026-11-16 · 2 contributions</title></rect>
+        <rect x="749" y="103" width="10" height="10" rx="2" fill="#1b6840" data-date="2026-11-17" class="day" style="--tier:#1b6840;--on:11.880s"><title>2026-11-17 · 5 contributions</title></rect>
         <text class="calendar-range" x="73" y="183">Nov 16, 2025 – Nov 17, 2026</text>
-        <text x="416" y="183" text-anchor="middle" fill="#d6e9dc">503 contributions · 110 active days</text>
+        <text x="416" y="183" text-anchor="middle" fill="#d6e9dc">505 contributions · 110 active days</text>
         <text class="legend-less" x="629" y="183">Less</text>
         <text class="legend-more" x="759" y="183" text-anchor="end">More</text>
         <rect x="661" y="174" width="10" height="10" rx="2" fill="#17241e" stroke="#2c4235"/>

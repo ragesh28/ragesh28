@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="191" height="34" viewBox="0 0 191 34">
+  <title>Open the live All Career site</title>
+  <style>
+    .pulse { opacity: 0; transform-origin: 16px 17px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .pulse { animation: pulse 2.8s cubic-bezier(.22,.68,.38,1) infinite; }
+    }
+    @keyframes pulse { 0% { opacity: .76; transform: scale(.6); } 62%, 100% { opacity: 0; transform: scale(1.8); } }
+  </style>
+  <rect x=".5" y=".5" width="190" height="33" rx="8" fill="#153522" stroke="#4baf6d"/>
+  <circle class="pulse" cx="16" cy="17" r="6" fill="none" stroke="#9df4b6"/>
+  <circle cx="16" cy="17" r="3" fill="#8af4aa"/>
+  <text x="29" y="21.5" fill="#e1f7e9" font-family="system-ui,sans-serif" font-size="13" font-weight="650">Open All Career</text>
+  <path d="M169 21l8-8m-6 0h6v6" fill="none" stroke="#b6f3c6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
