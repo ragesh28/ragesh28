@@ -450,7 +450,8 @@
         <rect x="736" y="142" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-20"/>
         <rect x="736" y="155" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-21"/>
         <rect x="749" y="77" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-22"/>
-        <text class="calendar-range" x="73" y="183">Nov 23, 2025 – Nov 22, 2026</text>
+        <rect x="749" y="90" width="10" height="10" rx="2" fill="#17241e" data-date="2026-11-23"/>
+        <text class="calendar-range" x="73" y="183">Nov 23, 2025 – Nov 23, 2026</text>
         <text x="416" y="183" text-anchor="middle" fill="#d6e9dc">500 contributions · 109 active days</text>
         <text class="legend-less" x="629" y="183">Less</text>
         <text class="legend-more" x="759" y="183" text-anchor="end">More</text>
